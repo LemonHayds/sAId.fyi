@@ -17,8 +17,10 @@ export default function AddPost({ setHidden }: any) {
           className="flex justify-center items-center w-fit h-fit px-4 py-2 hover:cursor-pointer  hover:text-black text-black/70 dark:text-slate-50/50 dark:hover:text-slate-50 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 shadow-md rounded-full"
           onClick={() => setHidden(false)}
         >
-          <div>Have something to say?</div>
-          <KeyboardIcon className="ml-2" />
+          <div className="animate-pulse flex justify-center items-center">
+            <div>Have something to say?</div>
+            <KeyboardIcon className="ml-2" />
+          </div>
         </div>
       </motion.div>
     </div>
