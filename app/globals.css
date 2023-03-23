@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.canvas-container {
+  height: 300px;
+  width: 300px;
+}
+
+@media (min-width: 768px) {
+  .canvas-container {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .canvas-container {
+    height: 700px;
+  }
+}
