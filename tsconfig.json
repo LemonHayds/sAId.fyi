@@ -35,7 +35,9 @@
     "app/whatissaid/page.jsx",
     "app/whatissaid/page.jsx",
     "app/auth/AuthContext.jsxx",
-    "app/auth/AuthContext.jsxx"
+    "app/auth/AuthContext.jsxx",
+    "app/404.jsx",
+    "app/404.jsx"
   ],
   "exclude": ["node_modules"]
 }

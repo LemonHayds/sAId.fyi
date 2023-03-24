@@ -6,6 +6,7 @@ import axios from "axios";
 import AddComment from "@/app/components/postcards/AddComment";
 import Comment from "@/app/components/postcards/Comment";
 import { PacmanLoader } from "react-spinners";
+import { useState } from "react";
 
 type URL = {
   params: {
@@ -15,21 +16,23 @@ type URL = {
 
 var userId = "";
 
-//Fetch post
-const fetchDetails = async (slug: string) => {
-  const userResponse = await axios.get("/api/auth/getUser");
-  userId = userResponse.data;
-  const response = await axios.get(`/api/posts/${slug}`);
-  console.log(response);
-  return response.data;
-};
-
 export default function PostDetail(url: URL) {
+  const [fetchLoading, setFetchLoading] = useState(true);
+
+  //Fetch post
+  const fetchDetails = async (slug: string) => {
+    const userResponse = await axios.get("/api/auth/getUser");
+    userId = userResponse.data;
+    const response = await axios.get(`/api/posts/${slug}`);
+    setFetchLoading(false);
+    return response.data;
+  };
+
   const { data, isLoading } = useQuery({
     queryKey: ["detail-post"],
     queryFn: () => fetchDetails(url.params.slug),
   });
-  if (isLoading)
+  if (isLoading || fetchLoading)
     return (
       <div className="flex justify-center items-center mt-6">
         <PacmanLoader color="#64748B" size={20} />

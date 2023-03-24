@@ -17,14 +17,16 @@ export default function SignOutButton({ image }: User) {
       >
         <div className="rounded-full hover:bg-slate-200/50 hover:dark:bg-slate-700/50">
           {image ? (
-            <Image
-              width={64}
-              height={64}
-              src={image}
-              className="w-14 rounded-full"
-              alt=""
-              priority
-            />
+            <div className="flex justify-center items-center rounded-full hover:bg-slate-200/50 hover:dark:bg-slate-700/50">
+              <Image
+                width={64}
+                height={64}
+                src={image}
+                className="w-9 rounded-full m-1"
+                alt=""
+                priority
+              />
+            </div>
           ) : (
             <SmartToyIcon
               sx={{ fontSize: 35 }}

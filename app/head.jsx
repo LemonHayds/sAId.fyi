@@ -1,8 +1,6 @@
-import Head from "next/head";
-
 export default function Head() {
   return (
-    <Head>
+    <>
       <title>sAId.</title>
       <meta
         name="viewport"
@@ -10,7 +8,8 @@ export default function Head() {
       />
       <link rel="icon" href="./favicon.ico" />
       <meta name="description" content="sAId.fyi" />
-      <link rel="apple-touch-icon" href="../public/static/logo192.png" />
-    </Head>
+      <link rel="apple-touch-icon" href="../public/apple-touch-icon.png" />
+      <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    </>
   );
 }

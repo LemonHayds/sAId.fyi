@@ -46,7 +46,6 @@ export default function EditPost({
         toast.error("Error unsaying", { id: deleteToastID });
       },
       onSuccess: (data) => {
-        console.log(data);
         toast.success("Unsaid successfully", { id: deleteToastID });
         queryClient.invalidateQueries(["auth-posts"]);
       },

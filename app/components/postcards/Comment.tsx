@@ -130,10 +130,10 @@ export default function Comment({
         <div className="flex items-center gap-2">
           {avatar ? (
             <Image
-              width={24}
-              height={24}
+              width={64}
+              height={64}
               src={avatar}
-              className="w-14 rounded-full"
+              className="w-6 rounded-full m-1"
               alt=""
               priority
             />

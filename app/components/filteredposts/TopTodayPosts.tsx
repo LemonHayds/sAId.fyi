@@ -87,10 +87,13 @@ export default function TopTodayPosts() {
           </div>
         )}
         {hasNextPage === false && (
-          <div className="flex justify-center items-center">
-            <p className="text-slate-50/50 text-lg">
+          <div className="flex justify-center items-center mt-6">
+            <div>
+              <p className="text-slate-50/50 text-sm mr-1">End of the line</p>
+            </div>
+            <div className="text-slate-50/50 text-md">
               <TbRobotOff />
-            </p>
+            </div>
           </div>
         )}
         <span ref={ref} className="w-full mt-8 invisible">

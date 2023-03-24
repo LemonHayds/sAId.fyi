@@ -6,7 +6,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    console.log(req.query.details);
     const details = req.query.details?.toString();
     //Get specific post
     try {

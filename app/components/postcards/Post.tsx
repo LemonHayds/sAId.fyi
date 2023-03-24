@@ -193,7 +193,7 @@ export default function Post({
               </div>
 
               <div className="grow flex justify-end items-center gap-2">
-                <h3 className="flex justify-between text-black font-medium dark:text-slate-50 text-xs lg:text-sm">
+                <h3 className="flex justify-between items-center text-black font-medium dark:text-slate-50 text-xs lg:text-sm">
                   <p className="text-right">{name}</p>
                 </h3>
                 {avatar ? (
@@ -201,7 +201,7 @@ export default function Post({
                     width={64}
                     height={64}
                     src={avatar}
-                    className="w-14 rounded-full"
+                    className="w-6 rounded-full m-1"
                     alt=""
                     priority
                   />

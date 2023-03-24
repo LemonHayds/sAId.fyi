@@ -20,7 +20,6 @@ export default async function handler(
       if (prismaUser) {
         try {
           const user = prismaUser?.id;
-          console.log(user);
           res.status(200).json(user);
         } catch (err) {
           res.status(403).json({ message: "Error retrieving posts" });
