@@ -58,6 +58,9 @@ export default function AddPost() {
       setSelectedItSaid(itSaidMessage.trim());
       setResponseLoading(false);
     } catch (error) {
+      toast.error("You need to be signed in", {
+        id: toastPostID,
+      });
       setResponseLoading(false);
       console.log(error);
     }
