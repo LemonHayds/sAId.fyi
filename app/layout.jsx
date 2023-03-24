@@ -1,19 +1,17 @@
 import "./globals.css";
 import Navbar from "./auth/Navbar";
 import QueryWrapper from "./auth/QueryWrapper";
-
 import { Inter } from "next/font/google";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} font-sans`}>
+    <html lang="en">
       <head />
-      <body className="bg-slate-50 dark:bg-slate-900 min-h-screen text-slate-900 antialiased">
+      <body
+        className={`bg-slate-50 dark:bg-slate-900 min-h-screen text-slate-900 antialiased ${inter.className})`}
+      >
         <QueryWrapper>
           <div className="flex flex-col min-h-screen">
             <Navbar />
