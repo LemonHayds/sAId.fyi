@@ -10,7 +10,7 @@ const WhatIsSaid = () => {
       <div className="grow flex h-full w-full px-6 lg:px-24">
         <div className="grow flex flex-col  lg:flex-row justify-center items-center">
           <div className="flex-1 lg:mt-0">
-            <h1 className="pt-6 text-center lg:text-left text-7xl lg:text-8xl font-extrabold dark:text-slate-50 text-black leading-tight">
+            <h1 className="pt-6 sm:pt-0 text-center lg:text-left text-7xl lg:text-8xl font-extrabold dark:text-slate-50 text-black leading-tight">
               sAId.fyi
             </h1>
             <div className="pt-2">
