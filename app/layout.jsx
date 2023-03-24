@@ -7,11 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head />
-      <body
-        className={`bg-slate-50 dark:bg-slate-900 min-h-screen text-slate-900 antialiased ${inter.className})`}
-      >
+      <body className="bg-slate-50 dark:bg-slate-900 min-h-screen text-slate-900 antialiased">
         <QueryWrapper>
           <div className="flex flex-col min-h-screen">
             <Navbar />
