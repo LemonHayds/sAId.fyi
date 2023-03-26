@@ -14,5 +14,20 @@ export type AuthPosts = {
       title: string;
       userId: string;
     }[];
+    likes: {
+      createdAt?: string;
+      id: string;
+      postId: string;
+      commentId: string;
+      userId: string;
+      user: {
+        email: string;
+        id: string;
+        image: string;
+        name: string;
+      };
+    }[];
+    prompt: string;
+    response: string;
   }[];
 };

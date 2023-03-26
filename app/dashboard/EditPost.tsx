@@ -12,29 +12,52 @@ import ModeCommentIcon from "@mui/icons-material/ModeComment";
 import Link from "next/link";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-type EditProps = {
+type PostProps = {
   id: string;
-  avatar: string;
   name: string;
+  avatar: string;
   comment: string;
   comments?: {
+    createdAt: string;
     id: string;
     postId: string;
+    title: string;
     userId: string;
   }[];
+  createdAt: string;
+  likes: {
+    createdAt?: string;
+    id: string;
+    postId: string;
+    commentId: string;
+    userId: string;
+    user: {
+      email: string;
+      id: string;
+      image: string;
+      name: string;
+    };
+  }[];
+  prompt: string;
+  itSaid: string;
 };
 
 export default function EditPost({
-  avatar,
+  id,
   name,
+  avatar,
   comment,
   comments,
-  id,
-}: EditProps) {
+  createdAt,
+  likes,
+  prompt,
+  itSaid,
+}: PostProps) {
   //Toggle
   const [toggle, setToggle] = useState(false);
   let deleteToastID: string = "bye";
   const queryClient = useQueryClient();
+  const [likesCount, setLikesCount] = useState(likes.length);
 
   //Delete post
   const { mutate } = useMutation(
@@ -66,18 +89,18 @@ export default function EditPost({
       >
         <div className="my-8">
           <div className=" bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 shadow-lg antialiased rounded-lg">
-            <Accordion title={`${name} said`} content={comment} />
-            <Accordion title={"It said"} content={comment} />
+            <Accordion title={`${name} said`} content={prompt} />
+            <Accordion title={"It said"} content={itSaid} />
 
             <div className="py-8 px-10">
               <p className="text-black dark:text-slate-50 text-md">{comment}</p>
             </div>
 
-            <div className="flex px-8 pb-5 gap-4 items-center justify-between">
+            <div className="flex px-6 sm:px-8 pb-5 gap-4 items-center justify-between">
               <div className="flex-1">
-                <div className="flex gap-8">
-                  <div className="text-sm font-medium text-black dark:text-slate-50 cursor-pointer">
-                    0 <FavoriteBorderIcon />
+                <div className="flex gap-4">
+                  <div className="text-sm font-medium text-black dark:text-slate-50">
+                    {likesCount} <FavoriteBorderIcon />
                   </div>
                   <Link
                     href={`/post/${id}`}

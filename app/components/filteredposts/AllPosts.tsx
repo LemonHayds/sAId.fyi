@@ -17,9 +17,7 @@ export default function AllPosts() {
 
   const {
     isLoading,
-    isError,
     data,
-    error,
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,

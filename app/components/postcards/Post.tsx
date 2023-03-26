@@ -150,7 +150,7 @@ export default function Post({
               <div className="flex-1 items-center">
                 <div className="flex gap-6">
                   <div className="text-sm font-medium text-black dark:text-slate-50 cursor-pointer">
-                    <div className="flex mr-3 ">
+                    <div className="flex mr-3">
                       <div className="flex justify-center items-center mr-1">
                         {likesCount}
                       </div>

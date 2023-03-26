@@ -10,7 +10,7 @@ type AccordionProps = {
   content: string;
 };
 
-export default function AddComment({ title, content }: AccordionProps) {
+export default function Accordion({ title, content }: AccordionProps) {
   const [active, setActive] = useState(false);
   const [height, setHeight] = useState("0px");
   const [rotate, setRotate] = useState("transform duration-700 ease");

@@ -29,12 +29,16 @@ export default function MyPosts() {
     <div>
       {data?.posts?.map((post) => (
         <EditPost
+          key={post.id}
           id={post.id}
+          name={data.name}
           avatar={data.image}
           comment={post.comment}
-          name={data.name}
           comments={post.comments}
-          key={post.id}
+          createdAt={post.createdAt}
+          likes={post.likes}
+          prompt={post.prompt}
+          itSaid={post.response}
         />
       ))}
       <EndOfTheLine />
