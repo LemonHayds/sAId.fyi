@@ -8,6 +8,7 @@ import { PostsType } from "../../types/Posts";
 import { PacmanLoader } from "react-spinners";
 import { useEffect, Fragment, useState } from "react";
 import { TbRobotOff } from "react-icons/tb";
+import EndOfTheLine from "../ui/EndOfTheLine";
 
 export default function MostLikedPosts() {
   const { ref, inView } = useInView();
@@ -86,16 +87,7 @@ export default function MostLikedPosts() {
             <PacmanLoader color="#64748B" size={20} />
           </div>
         )}
-        {hasNextPage === false && (
-          <div className="flex justify-center items-center mt-6">
-            <div>
-              <p className="text-slate-50/50 text-sm mr-1">End of the line</p>
-            </div>
-            <div className="text-slate-50/50 text-md">
-              <TbRobotOff />
-            </div>
-          </div>
-        )}
+        {hasNextPage === false && <EndOfTheLine />}
         <span ref={ref} className="w-full mt-8 invisible">
           Intersection observer marker
         </span>

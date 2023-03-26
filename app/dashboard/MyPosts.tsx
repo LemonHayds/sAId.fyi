@@ -5,7 +5,7 @@ import axios from "axios";
 import { AuthPosts } from "../types/AuthPosts";
 import EditPost from "./EditPost";
 import { PacmanLoader } from "react-spinners";
-import { TbRobotOff } from "react-icons/tb";
+import EndOfTheLine from "../components/ui/EndOfTheLine";
 
 const getAuthPosts = async () => {
   const response = await axios.get("/api/posts/authPosts");
@@ -37,14 +37,7 @@ export default function MyPosts() {
           key={post.id}
         />
       ))}
-      <div className="flex justify-center items-center mt-6">
-        <div>
-          <p className="text-slate-50/50 text-sm mr-1">End of the line</p>
-        </div>
-        <div className="text-slate-50/50 text-md">
-          <TbRobotOff />
-        </div>
-      </div>
+      <EndOfTheLine />
     </div>
   );
 }

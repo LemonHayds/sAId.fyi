@@ -7,7 +7,7 @@ import MostLikedPosts from "./components/filteredposts/MostLikedPosts";
 import TopTodayPosts from "./components/filteredposts/TopTodayPosts";
 
 export default function Home() {
-  const [filter, setFilter] = useState("mostLiked");
+  const [filter, setFilter] = useState("recent");
 
   function setRecent() {
     if (filter === "recent") return;
