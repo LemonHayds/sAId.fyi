@@ -13,13 +13,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body
-        className={`bg-slate-50 dark:bg-slate-900 min-h-screen text-slate-900 antialiased ${inter.variable}`}
+        className={`bg-slate-50 dark:bg-slate-900 min-h-screen text-slate-900 antialiased`}
       >
         <QueryWrapper>
-          <div className="flex flex-col min-h-screen">
+          <main className="flex flex-col min-h-screen font-inter">
             <Navbar />
             {children}
-          </div>
+          </main>
         </QueryWrapper>
       </body>
     </html>
