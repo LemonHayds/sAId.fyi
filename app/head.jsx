@@ -7,8 +7,8 @@ export default function Head() {
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
       <link rel="manifest" href="/manifest.json" />
-      <link rel="shortcut icon" href="./favicon.ico" />
-      <link rel="icon" href="./favicon.ico" />
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
       <meta name="description" content="sAId.fyi" />
       <link rel="apple-touch-icon" href="../public/apple-touch-icon.png" />
       <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
