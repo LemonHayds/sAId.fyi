@@ -43,7 +43,6 @@ export default function Comment({
   const created = new Date(createdAt);
   const createdDate = created.toLocaleDateString("en-US");
   const createdTime = created.toLocaleTimeString("en-US");
-
   let toastPostID: string = id;
 
   const [liked, setLiked] = useState(false);
@@ -118,71 +117,73 @@ export default function Comment({
   };
 
   return (
-    <motion.div
-      animate={{ opacity: 1, scale: 1 }}
-      initial={{ opacity: 0, scale: 0.2 }}
-      transition={{ ease: "easeOut" }}
-    >
-      <div
-        id={id}
-        className="my-6 p-8 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 shadow-lg antialiased rounded-lg"
+    <div key={id}>
+      <motion.div
+        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, scale: 0.2 }}
+        transition={{ ease: "easeOut" }}
       >
-        <div className="flex items-center gap-2">
-          {avatar ? (
-            <Image
-              width={64}
-              height={64}
-              src={avatar}
-              className="w-6 rounded-full m-1"
-              alt=""
-              priority
-            />
-          ) : (
-            <SmartToyIcon
-              sx={{ fontSize: 35 }}
-              className="text-black dark:text-slate-100 p-1"
-            />
-          )}
-          <h3 className="font-semibold text-black dark:text-slate-50">
-            {name}
-          </h3>
-        </div>
-        <div className="pt-6 pb-8 px-3 text-sm text-black dark:text-slate-50">
-          {comment}
-        </div>
-        <div className="text-sm font-medium text-black dark:text-slate-50 cursor-pointer">
-          <div className="flex justify-between items-center">
-            <div className="flex">
-              <div className="flex justify-center items-center mr-1">
-                {likesCount}
-              </div>
-              <div className="relative" onClick={() => handleLike()}>
-                <div className=" absolute">
-                  <FavoriteBorderIcon />
+        <div
+          id={id}
+          className="my-6 p-8 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 shadow-lg antialiased rounded-lg"
+        >
+          <div className="flex items-center gap-2">
+            {avatar ? (
+              <Image
+                width={64}
+                height={64}
+                src={avatar}
+                className="w-6 rounded-full m-1"
+                alt=""
+                priority
+              />
+            ) : (
+              <SmartToyIcon
+                sx={{ fontSize: 35 }}
+                className="text-black dark:text-slate-100 p-1"
+              />
+            )}
+            <h3 className="font-semibold text-black dark:text-slate-50">
+              {name}
+            </h3>
+          </div>
+          <div className="pt-6 pb-8 px-3 text-sm text-black dark:text-slate-50">
+            {comment}
+          </div>
+          <div className="text-sm font-medium text-black dark:text-slate-50 cursor-pointer">
+            <div className="flex justify-between items-center">
+              <div className="flex">
+                <div className="flex justify-center items-center mr-1">
+                  {likesCount}
                 </div>
-                <div className="relative">
-                  {liked === true && (
-                    <div className="absolute text-red-500 flex justify-center items-center">
-                      <motion.div
-                        animate={{ opacity: 1, scale: 1 }}
-                        initial={{ opacity: 0, scale: 0.1 }}
-                        transition={{ ease: "easeOut" }}
-                      >
-                        <FavoriteIcon />
-                      </motion.div>
-                    </div>
-                  )}
+                <div className="relative" onClick={() => handleLike()}>
+                  <div className=" absolute">
+                    <FavoriteBorderIcon />
+                  </div>
+                  <div className="relative">
+                    {liked === true && (
+                      <div className="absolute text-red-500 flex justify-center items-center">
+                        <motion.div
+                          animate={{ opacity: 1, scale: 1 }}
+                          initial={{ opacity: 0, scale: 0.1 }}
+                          transition={{ ease: "easeOut" }}
+                        >
+                          <FavoriteIcon />
+                        </motion.div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div className="text-xs text-black/50 dark:text-slate-50/50 font-normal text-right">
-                {`${createdDate} at ${createdTime}`}
+              <div>
+                <div className="text-xs text-black/50 dark:text-slate-50/50 font-normal text-right">
+                  {`${createdDate} at ${createdTime}`}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }

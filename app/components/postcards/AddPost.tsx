@@ -132,6 +132,7 @@ export default function AddPost() {
                     value={prompt}
                     placeholder="Enter your promt"
                     className="relative px-3.5 py-3 text-sm rounded-md my-2 focus:bg-slate-100/50 bg-slate-50 dark:bg-slate-700/25 dark:focus:bg-slate-700/50  border border-slate-300 dark:border-slate-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900"
+                    disabled={responseLoading == true}
                   ></textarea>
                   <div className="flex justify-between">
                     <p

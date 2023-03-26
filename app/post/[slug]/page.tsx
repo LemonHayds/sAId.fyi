@@ -58,15 +58,17 @@ export default function PostDetail(url: URL) {
       />
       <AddComment id={data?.id} />
       {data?.comments?.map((comment: any) => (
-        <Comment
-          id={comment.id}
-          comment={comment.comment}
-          name={comment?.user?.name}
-          createdAt={comment.createdAt}
-          avatar={comment.user?.image}
-          likes={comment?.likes}
-          userId={userId}
-        />
+        <div key={comment.id}>
+          <Comment
+            id={comment.id}
+            comment={comment.comment}
+            name={comment?.user?.name}
+            createdAt={comment.createdAt}
+            avatar={comment.user?.image}
+            likes={comment?.likes}
+            userId={userId}
+          />
+        </div>
       ))}
     </main>
   );

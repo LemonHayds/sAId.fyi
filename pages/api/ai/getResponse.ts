@@ -44,9 +44,6 @@ export default async function handler(
         })
         .then((data) => {
           res.status(200).json(data);
-        })
-        .catch((error) => {
-          res.status(403).json({ message: "Error fetching response from AI" });
         });
     } catch (err) {
       res.status(403).json({ message: "Error fetching response from AI" });
