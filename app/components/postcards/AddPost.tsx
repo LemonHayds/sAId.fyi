@@ -58,7 +58,7 @@ export default function AddPost() {
       setSelectedItSaid(itSaidMessage.trim());
       setResponseLoading(false);
     } catch (error) {
-      toast.error("You need to be signed in", {
+      toast.error("Error getting AI response", {
         id: toastPostID,
       });
       setResponseLoading(false);
@@ -113,17 +113,17 @@ export default function AddPost() {
           <div>
             <form
               onSubmit={submitPost}
-              className="mb-8 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 shadow-lg antialiased rounded-lg"
+              className="mb-8 antialiased bg-white border rounded-lg shadow-lg dark:bg-slate-800 border-slate-300 dark:border-slate-700"
             >
-              <div className="relative px-4 sm:px-8 py-4 sm:py-6">
+              <div className="relative px-4 py-4 sm:px-8 sm:py-6">
                 <button
-                  className="h-min absolute right-3 top-3 text-black/70 hover:text-black dark:text-slate-50/50 dark:hover:text-slate-50 hover:cursor-pointer"
+                  className="absolute h-min right-3 top-3 text-black/70 hover:text-black dark:text-slate-50/50 dark:hover:text-slate-50 hover:cursor-pointer"
                   onClick={() => closeAddPost()}
                 >
                   <CloseIcon />
                 </button>
                 <div className="flex flex-col">
-                  <h1 className="ml-1 text-black dark:text-white lg:text-left font-extrabold text-xl md:text-xl lg:text-xl">
+                  <h1 className="ml-1 text-xl font-extrabold text-black dark:text-white lg:text-left md:text-xl lg:text-xl">
                     You said.
                   </h1>
                   <textarea
@@ -140,11 +140,11 @@ export default function AddPost() {
                         prompt.length > 300 ? "text-red-600" : "text-slate-500"
                       }`}
                     >{`${prompt.length}/300`}</p>
-                    <div className="flex gap-4 items-center">
+                    <div className="flex items-center gap-4">
                       {/* 
-                      <div className="flex gap-1 items-center justify-end text-sm text-black/50 hover:text-black dark:text-slate-500 dark:hover:text-slate-50 cursor-pointer">
+                      <div className="flex items-center justify-end gap-1 text-sm cursor-pointer text-black/50 hover:text-black dark:text-slate-500 dark:hover:text-slate-50">
                         <div className="">Advanced</div>
-                        <div className=" text-sm">
+                        <div className="text-sm ">
                           <ExpandMoreIcon />
                         </div>
                       </div>
@@ -159,7 +159,7 @@ export default function AddPost() {
                             responseLoading == true ||
                             postDisabled
                           }
-                          className="active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900 bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-100 h-10 py-2 px-4"
+                          className="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-semibold text-white transition-colors rounded-md active:scale-95 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900 bg-slate-900 hover:bg-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-100"
                           onClick={() => generateResponse()}
                         >
                           {itSaid.length === 0 && !responseLoading && (
@@ -188,7 +188,7 @@ export default function AddPost() {
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <div className="flex justify-between relative">
+                  <div className="relative flex justify-between">
                     <div className="pb-2">
                       <h1
                         className={`${
@@ -243,23 +243,23 @@ export default function AddPost() {
                       />
                     )}
                   </div>
-                  <div className="flex justify-end items-center text-sm">
+                  <div className="flex items-center justify-end text-sm">
                     <div className="flex items-center">
                       <button
-                        className="text-black/50 hover:text-black dark:text-slate-500 dark:hover:text-slate-50 cursor-pointer text-sm disabled:pointer-events-none disabled:opacity-50"
+                        className="text-sm cursor-pointer text-black/50 hover:text-black dark:text-slate-500 dark:hover:text-slate-50 disabled:pointer-events-none disabled:opacity-50"
                         onClick={() => prevItSaid()}
                         disabled={itSaid.indexOf(selectedItSaid) <= 0}
                         type="button"
                       >
                         <ChevronLeftIcon />
                       </button>
-                      <div className="text-slate-500 text-sm">
+                      <div className="text-sm text-slate-500">
                         {`${itSaid.indexOf(selectedItSaid) + 1}/${
                           itSaid.length
                         } `}
                       </div>
                       <button
-                        className="text-black/50 hover:text-black dark:text-slate-500 dark:hover:text-slate-50 cursor-pointer text-sm disabled:pointer-events-none disabled:opacity-50"
+                        className="text-sm cursor-pointer text-black/50 hover:text-black dark:text-slate-500 dark:hover:text-slate-50 disabled:pointer-events-none disabled:opacity-50"
                         onClick={() => nextItSaid()}
                         disabled={
                           itSaid.indexOf(selectedItSaid) === itSaid.length - 1
@@ -298,7 +298,7 @@ export default function AddPost() {
                     <button
                       type="submit"
                       disabled={itSaid.length < 1 || postDisabled === true}
-                      className="active:scale-95 inline-flex items-center justify-center rounded-md text-sm font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900 bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-100 h-10 py-2 px-4"
+                      className="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-bold text-white transition-colors rounded-md active:scale-95 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-slate-400 disabled:pointer-events-none dark:focus:ring-offset-slate-900 bg-slate-900 hover:bg-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-100"
                     >
                       Post
                     </button>

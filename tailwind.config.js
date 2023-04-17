@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const { fontFamily } = require("tailwindcss/defaultTheme");
-
 module.exports = {
   darkMode: "class",
   content: [
@@ -12,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["var(--font-inter)", ...fontFamily.sans],
+        sans: ["var(--font-inter)"],
       },
     },
   },
